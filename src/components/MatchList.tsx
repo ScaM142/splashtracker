@@ -9,24 +9,24 @@ interface MatchListProps {
 
 export default function MatchList({ matches, onDeleteMatch }: MatchListProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden border-t-4 border-warriors-yellow">
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
+          <thead className="bg-warriors-blue text-white">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Opponent</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Score</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Result</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Date</th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Opponent</th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Score</th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Result</th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Actions</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {matches.map((match) => {
               const result = match.scoreTeam > match.scoreOpponent ? 'W' : 
                            match.scoreTeam < match.scoreOpponent ? 'L' : 'D';
-              const resultColor = result === 'W' ? 'text-green-600' :
-                                result === 'L' ? 'text-red-600' : 'text-yellow-600';
+              const resultColor = result === 'W' ? 'bg-green-100 text-green-800' :
+                                result === 'L' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800';
               
               return (
                 <tr key={match.id} className="hover:bg-gray-50">
@@ -40,7 +40,7 @@ export default function MatchList({ matches, onDeleteMatch }: MatchListProps) {
                     {match.scoreTeam} - {match.scoreOpponent}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${resultColor} bg-${resultColor.split('-')[1]}-100`}>
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${resultColor}`}>
                       {result}
                     </span>
                   </td>

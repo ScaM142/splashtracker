@@ -35,14 +35,14 @@ export default function MatchForm({ onAddMatch }: MatchFormProps) {
     <div className="mb-8">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+        className="flex items-center gap-2 bg-warriors-blue text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors"
       >
         <PlusCircle size={20} />
         Add New Match
       </button>
 
       {isOpen && (
-        <form onSubmit={handleSubmit} className="mt-4 bg-white p-6 rounded-lg shadow-md">
+        <form onSubmit={handleSubmit} className="mt-4 bg-white p-6 rounded-lg shadow-md border-t-4 border-warriors-yellow">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Opponent</label>
@@ -51,7 +51,7 @@ export default function MatchForm({ onAddMatch }: MatchFormProps) {
                 required
                 value={formData.opponent}
                 onChange={(e) => setFormData({ ...formData, opponent: e.target.value })}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warriors-blue focus:ring-warriors-blue"
               />
             </div>
             <div>
@@ -61,7 +61,7 @@ export default function MatchForm({ onAddMatch }: MatchFormProps) {
                 required
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warriors-blue focus:ring-warriors-blue"
               />
             </div>
             <div>
@@ -72,7 +72,7 @@ export default function MatchForm({ onAddMatch }: MatchFormProps) {
                 min="0"
                 value={formData.scoreTeam}
                 onChange={(e) => setFormData({ ...formData, scoreTeam: parseInt(e.target.value) })}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warriors-blue focus:ring-warriors-blue"
               />
             </div>
             <div>
@@ -83,7 +83,7 @@ export default function MatchForm({ onAddMatch }: MatchFormProps) {
                 min="0"
                 value={formData.scoreOpponent}
                 onChange={(e) => setFormData({ ...formData, scoreOpponent: parseInt(e.target.value) })}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-warriors-blue focus:ring-warriors-blue"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function MatchForm({ onAddMatch }: MatchFormProps) {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
+              className="px-4 py-2 text-sm font-medium text-white bg-warriors-blue rounded-md hover:bg-blue-800"
             >
               Add Match
             </button>

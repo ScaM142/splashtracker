@@ -47,12 +47,16 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex items-center gap-3 mb-8">
-          <Trophy className="text-blue-600" size={32} />
-          <h1 className="text-3xl font-bold text-gray-900">Team Match Tracker</h1>
+      <div className="bg-warriors-blue py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center gap-3 text-center">
+            <Trophy className="text-warriors-yellow" size={32} />
+            <h1 className="text-3xl font-bold text-white">Splash Brothers</h1>
+          </div>
         </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Statistics stats={stats} />
         <MatchForm onAddMatch={handleAddMatch} />
         
